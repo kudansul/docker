@@ -16,7 +16,8 @@ RUN apt-get update \
   && apt-key list | grep Xamarin \
   && apt-get purge -y --auto-remove gnupg dirmngr
 
-RUN echo "deb http://download.mono-project.com/repo/debian stable-buster/snapshots/$MONO_VERSION main" > /etc/apt/sources.list.d/mono-official-stable.list \
-  && apt-get update \
+RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" > /etc/apt/sources.list.d/mono-o-stable.list \
+  && apt-get update \fficial
+  && apt install ca-certificates \
   && apt-get install -y mono-runtime \
   && rm -rf /var/lib/apt/lists/* /tmp/*
